@@ -1,0 +1,35 @@
+.film-flex-container {
+  display: flex;
+  margin-top: 20px;
+  background-color: gray;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.film-title {
+  font-weight: bold;
+  font-size: 20pt;
+}
+
+.film-release {
+  font-size: 16pt;
+}
+
+.film-crawl {
+  font-size: 12pt;
+  margin-top: 20px;
+}
+
+.film-poster {
+  height: 300px;
+  width: auto;
+  margin-right: 20px;
+}
+
+.film-flex-item-image {
+  flex: 1;
+}
+
+.film-flex-item-text {
+  flex: 3;
+}
