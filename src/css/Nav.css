@@ -1,0 +1,21 @@
+.nav-container {
+  background-color: rgb(45, 45, 45);
+  height: 50px;
+}
+
+.nav-brand {
+  color: rgb(250, 240, 40);
+  font-size: 16pt;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.logo-container {
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.star-wars-logo {
+  height: 175px;
+  width: auto;
+}

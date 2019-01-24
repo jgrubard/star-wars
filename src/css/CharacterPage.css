@@ -1,0 +1,11 @@
+.char-flex-container {
+  display: flex;
+}
+
+.char-flex-item-pic {
+  flex: 1;
+}
+
+.char-flex-item-films {
+  flex: 2;
+}
