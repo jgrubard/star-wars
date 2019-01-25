@@ -1,8 +1,20 @@
+.profile-flex-container {
+  width: 400px;
+  display: flex;
+}
+
+.profile-flex-image {
+  flex: 1;
+}
+
 .profile-image {
   height: 200px;
   width: auto;
 }
 
-.profile-text {
+.profile-flex-text {
+  flex: 1;
   font-size: 10pt;
+  padding: 20px;
+  width: 200px;
 }

@@ -16,16 +16,23 @@ const CharacterCard = ({ character }) => {
   return (
     <div>
       <h3>{name}</h3>
-      <img
-        src={images[name]}
-        alt={name}
-        className='profile-image'
-      />
-      <div className='profile-text'>
-        <div>Height: {height}, Mass: {mass}</div>
-        <div>Hair: {hair_color}, Skin: {skin_color}</div>
-        <div>Eyes: {eye_color}</div>
-        <div>Birth: {birth_year}, Gender: {gender}</div>
+      <div className='profile-flex-container'>
+        <div className='profile-flex-image'>
+          <img
+            src={images[name]}
+            alt={name}
+            className='profile-image'
+          />
+        </div>
+        <div className='profile-flex-text'>
+          <div>Height: {height}</div>
+          <div>Mass: {mass}</div>
+          <div>Hair: {hair_color}</div>
+          <div>Skin: {skin_color}</div>
+          <div>Eyes: {eye_color}</div>
+          <div>Birth: {birth_year}</div>
+          <div>Gender: {gender}</div>
+        </div>
       </div>
     </div>
   );

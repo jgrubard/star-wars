@@ -71,12 +71,14 @@ class CharacterPage extends Component {
     const filmLoaded = !!selectedFilm.title;
     return (
       <div>
+        <div className='link-spacing'>
         <SWLink
           path='/'
           label='Return to All Characters'
+          style={{ fontSize: '20px', fontWeight: 'bold' }}
         />
+        </div>
         <div className='char-flex-container'>
-          
           <div className='char-flex-item-pic'>
             {
               charLoaded ? (

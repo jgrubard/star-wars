@@ -9,3 +9,8 @@
 .char-flex-item-films {
   flex: 2;
 }
+
+.link-spacing {
+  text-align: center;
+  margin: 20px;
+}

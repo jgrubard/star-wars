@@ -20,6 +20,16 @@ const images = {
   '7': episode7,
 }
 
+const romanNumerals = {
+  '1': 'I',
+  '2': 'II',
+  '3': 'III',
+  '4': 'IV',
+  '5': 'V',
+  '6': 'VI',
+  '7': 'VII',
+}
+
 const FilmCard = ({ film }) => {
   const fullDate = moment(new Date(film.release_date)).format('dddd, MMMM Do, YYYY');
   const { episode_id, title, opening_crawl } = film;
@@ -33,7 +43,7 @@ const FilmCard = ({ film }) => {
         />
       </div>
       <div className='film-flex-item-text'>
-        <div className='film-title'>Episode {episode_id}: {title}</div>
+        <div className='film-title'>Episode {romanNumerals[episode_id]}: {title}</div>
         <div className='film-release'>Release Date: {fullDate}</div>
         <div className='film-crawl'>{opening_crawl}</div>
       </div>

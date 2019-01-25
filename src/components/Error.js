@@ -4,7 +4,7 @@ import '../css/Error.css';
 class Error extends Component {
   constructor() {
     super();
-    this.state = { countdown: 3 }
+    this.state = { countdown: 5 }
     this.timerID = 0;
   }
 
@@ -17,7 +17,7 @@ class Error extends Component {
   redirect() {
     setTimeout(() => {
       this.props.history.push('/');
-    }, 3000);
+    }, 5000);
   }
 
   componentDidMount() {
@@ -32,6 +32,7 @@ class Error extends Component {
   render() {
     return (
       <div>
+        <h2>404 Not Found</h2>
         <h2>This is not the page you are looking for...</h2>
         <img
           className='jedi-mind-trick'
