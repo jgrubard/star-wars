@@ -1,7 +1,7 @@
 Star Wars Character Application
 ----
 
-###Deployed Page: [https://jg-star-wars.herokuapp.com](https://jg-star-wars.herokuapp.com)
+##Deployed Page: [https://jg-star-wars.herokuapp.com](https://jg-star-wars.herokuapp.com)
 
 To copy the application to your local machine, please run the 
  following command:
