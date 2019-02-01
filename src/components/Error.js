@@ -31,14 +31,14 @@ class Error extends Component {
 
   render() {
     return (
-      <div>
-        <h2>404 Not Found</h2>
-        <h2>This is not the page you are looking for...</h2>
+      <div className='error-container'>
+        <h1 className='red-sabre'>404 Not Found</h1>
         <img
           className='jedi-mind-trick'
           src='https://starwarsblog.starwars.com/wp-content/uploads/2017/06/25-star-wars-quotes-obi-wan-kenobi-identification-tall.jpg'
           alt='Jedi Mind Trick Error'
         />
+        <h2 className='green-sabre'>This is not the page you are looking for...</h2>
         <h3>Redirecting to homepage in {this.state.countdown} seconds...</h3>
       </div>
     );
