@@ -6,3 +6,9 @@ body {
   background-color: rgb(56, 56, 56);
   color: white;
 }
+
+@media (max-width: 500px) {
+  .app-container {
+    margin: 0px 10px 10px 10px;
+  }
+}

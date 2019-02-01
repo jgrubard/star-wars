@@ -47,7 +47,7 @@ class AllFilms extends Component {
     const { sortByRelease, sortByChronology } = this;
     return (
       <div>
-        <span className='films-header'>Films:</span>
+        <dispatchEvent className='films-header'>Films:</dispatchEvent>
         <Button
           label='Sort By Release Date'
           onClick={sortByRelease}

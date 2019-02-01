@@ -14,3 +14,9 @@
   text-align: center;
   margin: 20px;
 }
+
+@media (max-width: 500px) {
+  .char-flex-container {
+    display: block;
+  }
+}

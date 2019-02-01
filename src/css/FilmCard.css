@@ -38,3 +38,13 @@
 .film-flex-item-text {
   flex: 3;
 }
+
+@media (max-width: 500px) {
+  .film-flex-container {
+    display: block;
+  }
+
+  .film-flex-item-image {
+    text-align: center;
+  }
+}
