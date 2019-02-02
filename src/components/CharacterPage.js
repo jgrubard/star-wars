@@ -43,14 +43,25 @@ class CharacterPage extends Component {
     }
   }
 
+  // async retrieveCharacter() {
+  //   try {
+  //     const { id } = this.props;
+  //     const response = await axios.get(`${CORS}https://swapi.co/api/people/${id}/`)
+  //     const character = await response.data
+  //     await this.setState({ character });
+  //     await this.setState({ charLoaded: true });
+  //     await this.retrieveMovies(character);
+  //   } catch(err) {
+  //     console.log(err);
+  //   }
+  // }
+
   async retrieveCharacter() {
     try {
-      const { id } = this.props;
-      const response = await axios.get(`${CORS}https://swapi.co/api/people/${id}/`)
-      const character = await response.data
-      await this.setState({ character });
+      const char = JSON.parse(window.localStorage.getItem('character'));
+      await this.setState({ character: char })
       await this.setState({ charLoaded: true });
-      await this.retrieveMovies(character);
+      await this.retrieveMovies(char);
     } catch(err) {
       console.log(err);
     }
@@ -61,7 +72,7 @@ class CharacterPage extends Component {
     this.setState({ selectedFilm: film });
   }
   
-  componentDidMount() {
+  async componentDidMount() {
     this.retrieveCharacter();
   }
 
@@ -69,6 +80,8 @@ class CharacterPage extends Component {
     const { charLoaded, character, filmsLoaded, films, selectedFilm } = this.state;
     const { renderFilmCard } = this;
     const filmLoaded = !!selectedFilm.title;
+    // console.log(this.props.location.state);
+
     return (
       <div>
         <div className='link-spacing'>

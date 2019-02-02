@@ -16,9 +16,9 @@ class App extends Component {
         <div className='app-container'>
 
             <div>
-              <Route exact path='/' component={Characters} />
-              <Route exact path='/characters/:id' component={({ match }) => <CharacterPage id={match.params.id}/>} />
-              <Route exact path='/error' component={({ history }) => <Error history={history} />} />
+              <Route exact path='/' component={({ history }) => <Characters history={history}/>} />
+              <Route exact path='/characters/:id' component={({ match, history, location }) => <CharacterPage id={match.params.id} history={history} location={location}/>} />
+              <Route exact path='/error' component={({ history, location }) => <Error history={history} location={location}/>} />
             </div>
          
         </div>
