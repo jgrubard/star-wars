@@ -35,6 +35,7 @@ class Error extends Component {
     let error = JSON.parse(window.localStorage.getItem('error'));
     const genericError = { status: 500, message: 'Something Went Wrong' }
     error = error ? error : genericError;
+    const pluralize = countdown === 1 ? '' : 's';
     const dots = '.'.repeat(countdown);
     return (
       <div className='error-container'>
@@ -45,7 +46,7 @@ class Error extends Component {
           alt='Jedi Mind Trick Error'
         />
         <h2 className='green-sabre'>This is not the page you are looking for.</h2>
-        <h3>Redirecting to homepage in {countdown} second{countdown === 1 ? '' : 's'}{dots}</h3>
+        <h3>Redirecting to homepage in {countdown} second{pluralize}{dots}</h3>
       </div>
     );
   }

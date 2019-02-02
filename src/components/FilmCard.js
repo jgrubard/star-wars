@@ -30,32 +30,7 @@ const romanNumerals = {
   '7': 'VII',
 }
 
-// const FilmCard = ({ film, reference }) => {
-//   console.log('ref', reference);
-//   const fullDate = moment(new Date(film.release_date)).format('dddd, MMMM Do, YYYY');
-//   const { episode_id, title, opening_crawl } = film;
-//   return (
-//     <div ref={reference} className='film-flex-container'>
-//       <div className='film-flex-item-image'>
-//         <img
-//           className='film-poster'
-//           src={images[episode_id]}
-//           alt={`Episode ${episode_id} Poster`}
-//         />
-//       </div>
-//       <div className='film-flex-item-text'>
-//         <div className='film-title'>Episode {romanNumerals[episode_id]}: {title}</div>
-//         <div className='film-release'>Release Date: {fullDate}</div>
-//         <div className='film-crawl'>{opening_crawl}</div>
-//       </div>
-//     </div>
-//   );
-// }
-
-class FilmCard extends React.Component {
-
-render() {
-  const { film } = this.props;
+const FilmCard = ({ film }) => {
   const fullDate = moment(new Date(film.release_date)).format('dddd, MMMM Do, YYYY');
   const { episode_id, title, opening_crawl } = film;
   return (
@@ -74,8 +49,6 @@ render() {
       </div>
     </div>
   );
-}
-
 }
 
 export default FilmCard;

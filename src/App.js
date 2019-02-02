@@ -11,19 +11,17 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div>
-        <Nav />
-        <div className='app-container'>
-
+        <div>
+          <Nav />
+          <div className='app-container'>
             <div>
-              <Route exact path='/' component={({ history }) => <Characters history={history}/>} />
-              <Route exact path='/characters/:id' component={({ match, history, location }) => <CharacterPage id={match.params.id} history={history} location={location}/>} />
-              <Route exact path='/error' component={({ history, location }) => <Error history={history} location={location}/>} />
+              <Route exact path='/' component={Characters} />
+              <Route exact path='/characters/:id' component={({ match, history }) => <CharacterPage id={match.params.id} history={history} />} />
+              <Route exact path='/error' component={({ history }) => <Error history={history} />} />
             </div>
-         
+          </div>
         </div>
-      </div>
-      </ Router>
+      </Router>
     );
   }
 }
