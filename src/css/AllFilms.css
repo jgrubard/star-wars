@@ -4,8 +4,17 @@
   margin-right: 15px;
 }
 
+.all-films {
+  margin-top: 10px;
+}
+
 .btn-and-title {
   display: flex;
+  padding: 5px;
+}
+
+.light {
+  background-color: rgb(75, 75, 75);
 }
 
 .film-btn {
@@ -16,6 +25,7 @@
   font-size: 11pt;
   flex: 2;
   margin-top: 8px;
+  margin-left: 10px;
 }
 
 @media (max-width: 500px) {
@@ -26,5 +36,13 @@
 
   .film-btn {
     margin-top: 10px;
+  }
+
+  .film-text {
+    margin-left: 0px;
+  }
+
+  .sort-btns {
+    text-align: center;
   }
 }

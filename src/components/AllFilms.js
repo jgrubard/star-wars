@@ -48,21 +48,27 @@ class AllFilms extends Component {
     return (
       <div>
         <div className='films-header'>Films:</div>
-        <Button
-          label='Sort By Release Date'
-          onClick={sortByRelease}
-        />
-        <Button
-          label='Sort By Chronology'
-          onClick={sortByChronology}
-        />
-        <hr />
-        {
-          films.map((film, index) => {
-            const year = moment(new Date(film.release_date)).format('YYYY');
-            return (
-              <div>
-                <div className='btn-and-title' key={index}>
+        <div className='sort-btns'>
+          <Button
+            label='Sort By Release Date'
+            onClick={sortByRelease}
+          />
+          <Button
+            label='Sort By Chronology'
+            onClick={sortByChronology}
+          />
+        </div>
+        <div className='all-films'>
+          {
+            
+            films.map((film, index) => {
+              const year = moment(new Date(film.release_date)).format('YYYY');
+              const bgColor = index % 2 ? '' : ' light';
+              return (
+                <div
+                  className={`btn-and-title${bgColor}`}
+                  key={index}
+                >
                   <div className='film-text'>
                     Episode {romanNumerals[film.episode_id]}: {film.title} ({year})
                   </div>
@@ -72,13 +78,11 @@ class AllFilms extends Component {
                       label='Read More'
                     />
                   </div>
-
                 </div>
-                <hr />
-              </div>
-            );
-          })
-        }
+              );
+            })
+          }
+        </div>
       </div>
     );
   }
