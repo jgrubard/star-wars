@@ -33,7 +33,7 @@ class Error extends Component {
   render() {
     const { countdown } = this.state;
     let error = JSON.parse(window.localStorage.getItem('error'));
-    const genericError = { status: 500, message: 'Something Went Wrong...' }
+    const genericError = { status: 500, message: 'Something Went Wrong' }
     error = error ? error : genericError;
     const dots = '.'.repeat(countdown);
     return (

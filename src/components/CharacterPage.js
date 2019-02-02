@@ -22,6 +22,7 @@ class CharacterPage extends Component {
       filmsLoaded: false,
       selectedFilm: {}
     }
+    this.filmRef = React.createRef();
     this.renderFilmCard = this.renderFilmCard.bind(this);
   }
   
@@ -77,10 +78,20 @@ class CharacterPage extends Component {
   renderFilmCard(ev, film) {
     ev.preventDefault();
     this.setState({ selectedFilm: film });
+    this.scrollToFilmRef();
   }
   
   async componentDidMount() {
     this.retrieveCharacter();
+  }
+
+  scrollToFilmRef() {
+    // console.log(this.filmRef);
+    const newLocation = this.filmRef.current.offsetTop;
+    // console.log(newLocation);
+    // window.scrollTo(0, this.filmRef.current.offsetTop);
+    // console.log(window)
+    window.scrollTo(0, newLocation);
   }
 
   render() {
@@ -125,8 +136,8 @@ class CharacterPage extends Component {
             }
           </div>
         </div>
-        <div>
-          { filmLoaded && <FilmCard film={selectedFilm} /> }
+        <div ref={this.filmRef}>
+          { filmLoaded ? <FilmCard film={selectedFilm} /> : <span/>}
         </div>
       </div>
     );
