@@ -23,4 +23,8 @@ html {
   .char-flex-container {
     display: block;
   }
+
+  .char-flex-item-films {
+    margin-top: 20px;
+  }
 }

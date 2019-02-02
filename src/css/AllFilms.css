@@ -3,3 +3,28 @@
   font-weight: bold;
   margin-right: 15px;
 }
+
+.btn-and-title {
+  display: flex;
+}
+
+.film-btn {
+  flex: 1
+}
+
+.film-text {
+  font-size: 11pt;
+  flex: 2;
+  margin-top: 8px;
+}
+
+@media (max-width: 500px) {
+  .btn-and-title {
+    text-align: center;
+    display: block;
+  }
+
+  .film-btn {
+    margin-top: 10px;
+  }
+}

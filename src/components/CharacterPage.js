@@ -75,10 +75,10 @@ class CharacterPage extends Component {
   //   }
   // }
 
-  renderFilmCard(ev, film) {
+  async renderFilmCard(ev, film) {
     ev.preventDefault();
-    this.setState({ selectedFilm: film });
-    this.scrollToFilmRef();
+    await this.setState({ selectedFilm: film });
+    await this.scrollToFilmRef();
   }
   
   async componentDidMount() {

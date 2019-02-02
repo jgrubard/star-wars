@@ -61,12 +61,20 @@ class AllFilms extends Component {
           films.map((film, index) => {
             const year = moment(new Date(film.release_date)).format('YYYY');
             return (
-              <div key={index}>
-                <Button
-                  onClick={(ev) => renderFilmCard(ev, film)}
-                  label='Read More'
-                />
-                <span>Episode {romanNumerals[film.episode_id]}: {film.title} ({year})</span>
+              <div>
+                <div className='btn-and-title' key={index}>
+                  <div className='film-text'>
+                    Episode {romanNumerals[film.episode_id]}: {film.title} ({year})
+                  </div>
+                  <div className='film-btn'>
+                    <Button
+                      onClick={(ev) => renderFilmCard(ev, film)}
+                      label='Read More'
+                    />
+                  </div>
+
+                </div>
+                <hr />
               </div>
             );
           })
