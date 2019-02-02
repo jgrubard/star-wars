@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+// import LinkButton from './Library/LinkButton';
 import SWLink from './Library/SWLink';
 
 import CharacterCard from './CharacterCard';
@@ -43,29 +44,35 @@ class CharacterPage extends Component {
     }
   }
 
+  async retrieveCharacter() {
+    try {
+      const { id } = this.props;
+      const response = await axios.get(`${CORS}https://swapi.co/api/people/${id}/`)
+      const character = await response.data
+      await this.setState({ character });
+      await this.setState({ charLoaded: true });
+      await this.retrieveMovies(character);
+    } catch(err) {
+      console.log(err);
+      const error = {
+        status: err.response.status,
+        message: err.response.data.detail
+      }
+      window.localStorage.setItem('error', JSON.stringify(error))
+      this.props.history.push('/error');
+    }
+  }
+
   // async retrieveCharacter() {
   //   try {
-  //     const { id } = this.props;
-  //     const response = await axios.get(`${CORS}https://swapi.co/api/people/${id}/`)
-  //     const character = await response.data
-  //     await this.setState({ character });
-  //     await this.setState({ charLoaded: true });
-  //     await this.retrieveMovies(character);
+  //     const char = JSON.parse(window.localStorage.getItem('character'));
+  //     await this.setState({ character: char })
+  //     // await this.setState({ charLoaded: true });
+  //     await this.retrieveMovies(char);
   //   } catch(err) {
   //     console.log(err);
   //   }
   // }
-
-  async retrieveCharacter() {
-    try {
-      const char = JSON.parse(window.localStorage.getItem('character'));
-      await this.setState({ character: char })
-      await this.setState({ charLoaded: true });
-      await this.retrieveMovies(char);
-    } catch(err) {
-      console.log(err);
-    }
-  }
 
   renderFilmCard(ev, film) {
     ev.preventDefault();
@@ -80,15 +87,16 @@ class CharacterPage extends Component {
     const { charLoaded, character, filmsLoaded, films, selectedFilm } = this.state;
     const { renderFilmCard } = this;
     const filmLoaded = !!selectedFilm.title;
-    // console.log(this.props.location.state);
-
     return (
       <div>
         <div className='link-spacing'>
-        <SWLink
-          path='/'
+        {/* <LinkButton
           label='Return to All Characters'
-          style={{ fontSize: '20px', fontWeight: 'bold' }}
+          onClick={() => this.props.history.push('/')}
+        /> */}
+        <SWLink
+          label='Return to All Characters'
+          path={'/'}
         />
         </div>
         <div className='char-flex-container'>

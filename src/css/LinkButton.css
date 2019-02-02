@@ -1,0 +1,18 @@
+.link-btn {
+  outline: 0;
+  margin: 5px 15px 5px 5px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 18pt;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+}
+
+.link-btn:hover {
+  background-color: rgb(180, 180, 180);
+  color: black;
+}
