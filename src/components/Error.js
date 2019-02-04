@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+
 import '../css/Error.css';
 
 class Error extends Component {
   constructor() {
     super();
-    this.state = { countdown: 5 }
+    this.state = {
+      countdown: 5
+    }
     this.timerID = 0;
   }
 
@@ -45,7 +48,7 @@ class Error extends Component {
           src='https://starwarsblog.starwars.com/wp-content/uploads/2017/06/25-star-wars-quotes-obi-wan-kenobi-identification-tall.jpg'
           alt='Jedi Mind Trick Error'
         />
-        <h2 className='green-sabre'>This is not the page you are looking for.</h2>
+        <h2 className='blue-sabre'>This is not the page you are looking for.</h2>
         <h3>Redirecting to homepage in {countdown} second{pluralize}{dots}</h3>
       </div>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import SWLink from './Library/SWLink';
+import { SWLink } from './Library';
 import CharacterCard from './CharacterCard';
 import AllFilms from './AllFilms';
 import FilmCard from './FilmCard';
@@ -120,7 +120,7 @@ class CharacterPage extends Component {
           </div>
         </div>
         <div ref={this.filmRef}>
-          { filmLoaded ? <FilmCard film={selectedFilm} /> : <span/>}
+          { filmLoaded && <FilmCard film={selectedFilm} /> }
         </div>
       </div>
     );

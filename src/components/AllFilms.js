@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import Button from './Library/Button';
-
+import { Button } from './Library';
 import '../css/AllFilms.css';
 
 const romanNumerals = {
@@ -18,7 +17,9 @@ const romanNumerals = {
 class AllFilms extends Component {
   constructor() {
     super();
-    this.state = { films: [] }
+    this.state = {
+      films: []
+    }
     this.sortByRelease = this.sortByRelease.bind(this);
     this.sortByChronology = this.sortByChronology.bind(this);
   }

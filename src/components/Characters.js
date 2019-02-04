@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import SWLink from './Library/SWLink';
 
-import '../css/Characters.css'
+import '../css/Characters.css';
+import { SWLink } from './Library';
+
 import { characters } from '../characters.json';
 
 class Characters extends Component {
